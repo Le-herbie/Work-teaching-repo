@@ -10,28 +10,28 @@ Choose your preferred backend stack (e.g., Java + HttpServer, Python + FastAPI/F
 1. Battery Class
 
 Models a 12V SLA robot battery tracked in the pits.
-• Properties: batteryId (string), voltage (float/double), cycles (int), isPracticeOnly (boolean).
+• Properties: batteryId (string), voltage (float/double), cycles (int), isPracticeOnly (boolean). ✔️
 • Constructor Requirements:
-	• Full Constructor: Accepts all four properties.
-	• New Competition Battery Constructor (Overload or Default Params): Accepts only batteryId, defaulting voltage to 13.1, cycles to 0, and isPracticeOnly to false.
+	• Full Constructor: Accepts all four properties. ✔️
+	• New Competition Battery Constructor (Overload or Default Params): Accepts only batteryId, defaulting voltage to 13.1, cycles to 0, and isPracticeOnly to false. ✔️
 • Behavior:
-	• isMatchReady(): Returns true only if voltage >= 12.7 and isPracticeOnly is false.
+	• isMatchReady(): Returns true only if voltage >= 12.7 and isPracticeOnly is false. ✔️
 
 2. Subsystem Base Class
 
 Models any CAN-connected mechanism on the robot.
 • Properties: name (string), canId (int), currentLimitAmps (int).
 • Constructor Requirements:
-	• Full Constructor: Accepts name, canId, and currentLimitAmps.
-	• Standard Breaker Constructor (Overload or Default Params): Accepts name and canId, defaulting currentLimitAmps to 40.
+	• Full Constructor: Accepts name, canId, and currentLimitAmps. ✔️
+	• Standard Breaker Constructor (Overload or Default Params): Accepts name and canId, defaulting currentLimitAmps to 40. ✔️
 
 3. ShooterSubsystem Subclass (Inherits from Subsystem)
 
 Extends Subsystem for a flywheel/launcher mechanism.
 • Additional Properties: targetRpm (int), hasHood (boolean).
 • Constructor Requirements:
-	• Full Constructor: Accepts all base and subclass properties, passing name, canId, and currentLimitAmps up to the parent (super) constructor.
-	• Fixed-Hood Constructor (Overload or Default Params): Accepts name, canId, and targetRpm, defaulting currentLimitAmps to 60 and hasHood to false.
+	• Full Constructor: Accepts all base and subclass properties, passing name, canId, and currentLimitAmps up to the parent (super) constructor. ✔️
+	• Fixed-Hood Constructor (Overload or Default Params): Accepts name, canId, and targetRpm, defaulting currentLimitAmps to 60 and hasHood to false. ✔️
 
 4. Web Server & REST API (server / main entry point)
 
